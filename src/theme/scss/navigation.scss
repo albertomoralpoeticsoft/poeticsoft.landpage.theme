@@ -1,0 +1,55 @@
+
+/**************************************
+  NAVIGATION 
+***************************************
+*/
+
+@use '~common/scss/mixin' as *;
+
+nav.wp-block-navigation {
+
+  button.wp-block-navigation__responsive-container-open {
+
+    padding: var(--s2) var(--s2);
+    cursor: pointer;
+  }
+
+  .wp-block-navigation__responsive-container {
+
+    .wp-block-navigation__responsive-close {
+
+      .wp-block-navigation__responsive-dialog {
+
+        button.wp-block-navigation__responsive-container-close {
+
+          padding: var(--s2) var(--s3);
+          cursor: pointer;
+        }
+
+        .wp-block-navigation__responsive-container-content{
+
+          ul.wp-block-navigation__container {
+
+            gap: 0;
+
+            .wp-block-navigation-item {
+
+              a {
+
+                padding: var(--s2) var(--s2);
+                font-size: 0.9em;
+                text-transform: uppercase;
+                cursor: pointer;
+              }
+              
+              &.current-menu-item,
+              &:hover {
+                
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

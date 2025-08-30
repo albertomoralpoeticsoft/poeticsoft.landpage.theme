@@ -1,0 +1,45 @@
+@use '~common/scss/mixin' as *;
+
+.wp-block-group.form {
+  
+  .form-block__required-notice {
+
+    text-align: right;
+    color: #ffffff88;
+    font-size: 0.8em;
+
+    .is-required {
+
+      color: #ff0000;
+    }
+  }
+
+  .wp-block-form-block-form {
+    
+    .form-block__element.wp-block-form-block-input  {
+
+      &.wp-block-button {
+
+        justify-content: flex-end;
+        margin-block-start: calc(var(--form-block--gap--element) * 1.5);
+
+        input {
+
+          margin-right: 0;
+          width: fit-content;
+        }
+      }
+
+      .form-block__source {
+
+
+      }
+
+      .form-block__label {
+
+        margin: 0 0 var(--s) 0;
+        font-size: 0.9em;
+      }
+    }
+  }
+}

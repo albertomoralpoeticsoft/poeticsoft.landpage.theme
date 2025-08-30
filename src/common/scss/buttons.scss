@@ -1,0 +1,17 @@
+.wp-block-button__link.wp-element-button {
+
+  background-color: var(--naranja);
+  color: var(--blanco);
+  border: none;
+
+  &:hover {
+
+    background-color: var(--naranja-intenso);
+  }
+
+  &:visited {
+
+    background-color: var(--blanco);
+    color: var(--naranja);
+  }
+}

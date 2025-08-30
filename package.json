@@ -1,0 +1,35 @@
+{
+  "name": "playmotiv-landpage-theme",
+  "version": "0.0.0",
+  "license": "GPL-2.0-or-later",
+  "scripts": {    
+    "admindev": "webpack --env=admin-dev",
+    "adminprod": "webpack --env=admin-prod",    
+    "themedev": "webpack --env=theme-dev",
+    "themeprod": "webpack --env=theme-prod"
+  },
+  "dependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/runtime": "^7.18.9",
+    "@react-spring/web": "^9.7.5",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.5",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "sass": "^1.54.2",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "devDependencies": {
+    "webpack-cli": "^6.0.1"
+  }
+}

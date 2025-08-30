@@ -1,0 +1,74 @@
+.ps-visual {
+
+  transition-delay: 0;
+
+  @for $i from 1 through 20 {
+    
+    &.ps-delay-#{$i} { transition-delay: #{$i / 10}s; }
+  }
+
+  &.ps-left {    
+
+    opacity: 0;
+    transform: translateX(-10%);
+
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+
+    &.ps-not-in-viewport { }
+
+    &.ps-in-viewport {
+
+      opacity: 1;
+      transform:  translateX(0);
+    }
+  }
+
+  &.ps-right-fade {    
+
+    opacity: 0;
+    transform: translateX(10%);
+
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+
+    &.ps-in-viewport {
+
+      opacity: 1;
+      transform:  translateX(0);
+    }
+  }
+
+  &.ps-left-zoom {    
+
+    opacity: 0;
+    transform: translateX(-10%) scale(0.9);
+
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+
+    &.ps-in-viewport {
+
+      opacity: 1;
+      transform:  translateX(0) scale(1);
+    }
+  }
+
+  &.ps-fade {    
+
+    opacity: 0;
+
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+
+    &.ps-in-viewport {
+
+      transition-delay: 0.5s;
+      opacity: 1;
+    }
+  }
+}

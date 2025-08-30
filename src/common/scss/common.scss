@@ -1,0 +1,28 @@
+@use '~common/scss/root';
+@use './mixin' as *;
+
+strong {
+
+  font-weight: 900;
+}
+
+.components-text-control__input,
+input[type="text"].form-block__source,
+input[type="email"].form-block__source {
+
+  font-size: 1.1em !important;
+  line-height: 1em !important;
+  padding: var(--s075) var(--s15) !important;
+  height: auto !important;
+  font-family: var(--wp--preset--font-family--source-sans-3) !important;
+}
+
+.invert {
+
+  filter: invert(100%);
+}
+
+.rotate {
+
+  transform: rotate(180deg);
+}
