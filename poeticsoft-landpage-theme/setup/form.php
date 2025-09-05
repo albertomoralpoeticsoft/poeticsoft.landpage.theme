@@ -12,7 +12,8 @@ add_action(
         $data = [
           'name' => $_REQUEST['nombre'],
           'email' => $_REQUEST['email'],
-          'status' => 'Entrega'
+          'empresa' => $_REQUEST['empresa'],
+          'status' => 'Nuevo'
         ];
 
         $body = json_encode($data);
@@ -27,15 +28,15 @@ add_action(
             ],
         ]);
 
-        // $response = wp_remote_post(
-        //   'https://n8n.poeticsoft.com/webhook-test/ave-audit-lp-form', [
-        //     'method'    => 'POST',
-        //     'body'      => $body,
-        //     'timeout'   => 20,
-        //     'headers'   => [
-        //       'Content-Type' => 'application/json',
-        //     ],
-        // ]);
+        $response = wp_remote_post(
+          'https://n8n.poeticsoft.com/webhook-test/ave-audit-lp-form', [
+            'method'    => 'POST',
+            'body'      => $body,
+            'timeout'   => 20,
+            'headers'   => [
+              'Content-Type' => 'application/json',
+            ],
+        ]);
       
         // theme_log($response);
       }

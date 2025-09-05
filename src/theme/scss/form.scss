@@ -7,38 +7,123 @@
     text-align: right;
     color: #ffffff88;
     font-size: 0.8em;
+    margin-bottom: var(--s2);
 
     .is-required {
-
+      
+      position: absolute;
       color: #ff0000;
+      font-size: 1.8em;
+      line-height: 1;
+    }
+  }
+
+  &.auditoria {
+
+    .form-block__required-notice {
+
+      display: none;
+    }
+
+    form {
+
+      .wp-block-form-block-input {
+
+        margin-top: var(--s2);
+        margin-bottom: 0 !important;
+
+        label {
+
+          display: none;
+        }
+      }
     }
   }
 
   .wp-block-form-block-form {
+
+    margin-bottom: var(--s3);
     
     .form-block__element.wp-block-form-block-input  {
+
+      padding: var(--s);
+      margin-bottom: var(--s);
+      margin-left: calc(var(--s) * -1);
+      margin-right: calc(var(--s) * -1);
+
+      &.is-type-checkbox {
+
+        margin-bottom: 0;        
+      }
+
+      &.form-error {
+
+        border: dotted 1px var(--naranja-intenso);
+      }
 
       &.wp-block-button {
 
         justify-content: flex-end;
-        margin-block-start: calc(var(--form-block--gap--element) * 1.5);
+        margin-block-start: 0;
+        margin-block-end: 0;
 
         input {
 
+          margin-left: 0;
           margin-right: 0;
           width: fit-content;
         }
       }
 
-      .form-block__source {
+      .form-block__source[id="id-he-ledo-y-acepto-la-poltica-de-privacidad-2"] {
 
+        width: var(--s3);
+        height: var(--s3);
+        margin-right: var(--s);
+        cursor: pointer;
+      }
 
+      label {
+
+        margin: 0;
       }
 
       .form-block__label {
 
         margin: 0 0 var(--s) 0;
         font-size: 0.9em;
+
+        .is-required {
+
+          position: absolute;
+          display: inline-block;
+          color: #ff0000;
+          font-size: 1.8em;
+          line-height: 1;
+        }
+      }
+
+      .inline-error {
+
+        margin-top: var(--s05);
+        font-size: 0.8em;
+        color: var(--naranja-intenso);
+        font-weight: 900;
+      }
+
+      &.is-type-system {
+
+        padding: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .form-block__message-container {
+
+      &.is-type-success {
+
+        color: var(--verde-roi);
+        font-weight: 900;
       }
     }
   }

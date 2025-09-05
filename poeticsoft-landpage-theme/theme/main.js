@@ -41,6 +41,42 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/theme/js/privacy.js":
+/*!*********************************!*\
+  !*** ./src/theme/js/privacy.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
+  var $ = jQuery;
+  var $privacylinks = $('[href="/politica-privacidad"]');
+  $privacylinks.on('click', function () {
+    var $this = $(this);
+    var contenturl = $this.attr('href');
+    $('body').append('<div id="TermsDialog">Cargando...</div>');
+    fetch(contenturl).then(function (result) {
+      return result.text().then(function (content) {
+        var $body = $(content).find('.wp-block-post-content');
+        $('#TermsDialog').html($body);
+      });
+    });
+    $('#TermsDialog').dialog({
+      dialogClass: 'privacy',
+      modal: true,
+      title: 'AVE™ Auditoría Visual Estratégica'
+    });
+    $('#TermsDialog').dialog('open');
+    return false;
+  });
+  return false;
+});
+
+/***/ }),
+
 /***/ "./src/theme/main.scss":
 /*!*****************************!*\
   !*** ./src/theme/main.scss ***!
@@ -117,10 +153,13 @@ var __webpack_exports__ = {};
   \***************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_inviewport__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/inviewport */ "./src/theme/js/inviewport.js");
-/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main.scss */ "./src/theme/main.scss");
+/* harmony import */ var _js_privacy__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/privacy */ "./src/theme/js/privacy.js");
+/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./main.scss */ "./src/theme/main.scss");
+
 
 
 (0,_js_inviewport__WEBPACK_IMPORTED_MODULE_0__["default"])();
+(0,_js_privacy__WEBPACK_IMPORTED_MODULE_1__["default"])();
 })();
 
 /******/ })()

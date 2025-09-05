@@ -46,7 +46,7 @@
 ***************************************
 */
 strong {
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .components-text-control__input,
@@ -142,6 +142,9 @@ nav.wp-block-navigation {
   overflow: auto;
   scroll-behavior: smooth;
 }
+.entry-content.wp-block-post-content a:not(.wp-block-button__link) {
+  color: var(--naranja);
+}
 .entry-content.wp-block-post-content p,
 .entry-content.wp-block-post-content [class^=wp-block-]:not(.wp-block-button) {
   margin-right: auto;
@@ -157,6 +160,12 @@ nav.wp-block-navigation {
 .entry-content.wp-block-post-content [class^=wp-block-]:not(.wp-block-button).alignwide .wp-block-cover__background {
   max-width: 100%;
   width: 100%;
+}
+
+.wp-block-button.secondary .wp-block-button__link {
+  background-color: transparent;
+  border: solid 1px var(--naranja);
+  color: var(--naranja);
 }
 
 /**************************************
@@ -318,21 +327,124 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container .wp-block-nav
   text-align: right;
   color: rgba(255, 255, 255, 0.5333333333);
   font-size: 0.8em;
+  margin-bottom: var(--s2);
 }
 .wp-block-group.form .form-block__required-notice .is-required {
+  position: absolute;
   color: #ff0000;
+  font-size: 1.8em;
+  line-height: 1;
+}
+.wp-block-group.form.auditoria .form-block__required-notice {
+  display: none;
+}
+.wp-block-group.form.auditoria form .wp-block-form-block-input {
+  margin-top: var(--s2);
+  margin-bottom: 0 !important;
+}
+.wp-block-group.form.auditoria form .wp-block-form-block-input label {
+  display: none;
+}
+.wp-block-group.form .wp-block-form-block-form {
+  margin-bottom: var(--s3);
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input {
+  padding: var(--s);
+  margin-bottom: var(--s);
+  margin-left: calc(var(--s) * -1);
+  margin-right: calc(var(--s) * -1);
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input.is-type-checkbox {
+  margin-bottom: 0;
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input.form-error {
+  border: dotted 1px var(--naranja-intenso);
 }
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input.wp-block-button {
   justify-content: flex-end;
-  margin-block-start: calc(var(--form-block--gap--element) * 1.5);
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input.wp-block-button input {
+  margin-left: 0;
   margin-right: 0;
   width: fit-content;
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .form-block__source[id=id-he-ledo-y-acepto-la-poltica-de-privacidad-2] {
+  width: var(--s3);
+  height: var(--s3);
+  margin-right: var(--s);
+  cursor: pointer;
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input label {
+  margin: 0;
 }
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .form-block__label {
   margin: 0 0 var(--s) 0;
   font-size: 0.9em;
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .form-block__label .is-required {
+  position: absolute;
+  display: inline-block;
+  color: #ff0000;
+  font-size: 1.8em;
+  line-height: 1;
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .inline-error {
+  margin-top: var(--s05);
+  font-size: 0.8em;
+  color: var(--naranja-intenso);
+  font-weight: 900;
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input.is-type-system {
+  padding: 0;
+  margin-bottom: 0;
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__message-container.is-type-success {
+  color: var(--verde-roi);
+  font-weight: 900;
+}
+
+.ui-dialog.privacy {
+  width: 90% !important;
+  max-width: 640px !important;
+  height: 90% !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: var(--s05);
+}
+.ui-dialog.privacy .ui-dialog-titlebar .ui-dialog-title {
+  font-family: var(--wp--preset--font-family--playfair-display);
+}
+.ui-dialog.privacy .ui-dialog-titlebar .ui-button.ui-dialog-titlebar-close:focus {
+  box-shadow: none;
+  outline: none;
+  outline-offset: none;
+}
+.ui-dialog.privacy .ui-dialog-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 38px;
+}
+.ui-dialog.privacy .ui-dialog-content .entry-content.wp-block-post-content {
+  font-size: 0.8em;
+  padding: var(--s3);
+}
+.ui-dialog.privacy .ui-dialog-content .entry-content.wp-block-post-content h1, .ui-dialog.privacy .ui-dialog-content .entry-content.wp-block-post-content h2, .ui-dialog.privacy .ui-dialog-content .entry-content.wp-block-post-content h3, .ui-dialog.privacy .ui-dialog-content .entry-content.wp-block-post-content h4, .ui-dialog.privacy .ui-dialog-content .entry-content.wp-block-post-content h5 {
+  margin-bottom: var(--s2);
+}
+.ui-dialog.privacy .ui-dialog-content .entry-content.wp-block-post-content p, .ui-dialog.privacy .ui-dialog-content .entry-content.wp-block-post-content ul {
+  margin-bottom: var(--s);
+}
+.ui-dialog.privacy .ui-dialog-content .entry-content.wp-block-post-content h2 {
+  font-size: 1.4em;
+}
+.ui-dialog.privacy .ui-dialog-content .entry-content.wp-block-post-content h3 {
+  font-size: 1.2em;
 }
 
 /*# sourceMappingURL=main.css.map*/

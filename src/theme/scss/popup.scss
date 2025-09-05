@@ -1,0 +1,59 @@
+@use '~common/scss/mixin' as *;
+
+.ui-dialog.privacy { 
+
+  width: 90% !important;
+  max-width: 640px !important;
+  height: 90% !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: var(--s05);
+
+  .ui-dialog-titlebar {
+
+    .ui-dialog-title {
+
+      font-family: var(--wp--preset--font-family--playfair-display);
+    }
+
+    .ui-button.ui-dialog-titlebar-close:focus {
+
+      box-shadow: none;
+      outline: none;
+      outline-offset: none;
+    }
+  }
+
+  .ui-dialog-content {
+
+    @include absolutebox();
+    top: 38px;
+
+    .entry-content.wp-block-post-content {
+
+      font-size: 0.8em;
+      padding: var(--s3);
+
+      h1, h2, h3, h4, h5 {
+
+        margin-bottom: var(--s2);
+      }
+
+      p, ul {
+
+        margin-bottom: var(--s);
+      }
+
+      h2 {
+
+        font-size: 1.4em;
+      }
+
+      h3 {
+
+        font-size: 1.2em;
+      }
+    }
+  }
+}

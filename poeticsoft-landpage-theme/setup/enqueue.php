@@ -42,7 +42,9 @@ add_action(
       'poeticsoft-landpage-theme-theme', 
       $url . '/theme/main.js',
       [
-        
+        'jquery',
+        'jquery-ui-core',
+        'jquery-ui-dialog'
       ], 
       filemtime(get_stylesheet_directory() . '/theme/main.js'),
       true
@@ -51,7 +53,9 @@ add_action(
     wp_enqueue_style( 
       'poeticsoft-landpage-theme-theme',
       $url . '/theme/main.css', 
-      [], 
+      [
+        'wp-jquery-ui-dialog' 
+      ], 
       filemtime(get_stylesheet_directory() . '/theme/main.css'),
       'all' 
     );
