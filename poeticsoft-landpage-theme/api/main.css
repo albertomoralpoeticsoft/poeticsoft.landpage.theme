@@ -1,0 +1,47 @@
+/*!********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/mailmessage/main.scss ***!
+  \********************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap);
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/mailmessage/main.scss (1) ***!
+  \************************************************************************************************************************/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  background-color: #dddddd;
+}
+
+.message {
+  width: 90%;
+  max-width: 280px;
+  margin: 36px auto;
+  border: solid 1px #000000;
+  padding: 24px;
+  background-color: #ffffff;
+  text-align: justify;
+  font-size: 12px;
+}
+
+p {
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+figure {
+  text-align: center;
+}
+
+.wp-block-buttons .wp-block-button {
+  background-color: #FF6600;
+  font-family: "Montserrat", Arial, sans-serif;
+  padding: 12px 16px;
+  border-radius: 3333px;
+  width: fit-content;
+  margin: 0 auto;
+}
+.wp-block-buttons .wp-block-button .wp-block-button__link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/*# sourceMappingURL=main.css.map*/

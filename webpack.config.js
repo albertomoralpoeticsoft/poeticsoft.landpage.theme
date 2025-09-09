@@ -21,6 +21,15 @@ module.exports = env => {
 
   switch(type) {
 
+    case 'mailmessage': 
+
+      mode = params[1] || 'dev' // dev | prod
+      
+      paths.entryjs = './src/' + type + '/main.js',
+      paths.output = destdir  + '/api'
+
+      break
+
     default:
 
       mode = params[1] || 'dev' // dev | prod
@@ -110,6 +119,7 @@ module.exports = env => {
     resolve: {
       extensions: ['.js'],
       alias: {
+        assets: path.join(destdir, 'assets'),
         common: path.join(__dirname, 'src/common'),
       }
     }

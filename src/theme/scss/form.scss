@@ -29,13 +29,7 @@
 
       .wp-block-form-block-input {
 
-        margin-top: var(--s2);
         margin-bottom: 0 !important;
-
-        label {
-
-          display: none;
-        }
       }
     }
   }
@@ -47,13 +41,15 @@
     .form-block__element.wp-block-form-block-input  {
 
       padding: var(--s);
-      margin-bottom: var(--s);
+      margin-bottom: 0;
       margin-left: calc(var(--s) * -1);
       margin-right: calc(var(--s) * -1);
 
       &.is-type-checkbox {
 
-        margin-bottom: 0;        
+        margin-bottom: 0;   
+        display: flex;
+        align-items: center;   
       }
 
       &.form-error {
@@ -69,16 +65,15 @@
 
         input {
 
-          margin-left: 0;
-          margin-right: 0;
           width: fit-content;
         }
       }
 
-      .form-block__source[id="id-he-ledo-y-acepto-la-poltica-de-privacidad-2"] {
+      .form-block__source[id="id-he-ledo-y-acepto-la-poltica-de-privacidad-2"],
+      .form-block__source[id="id-he-ledo-y-acepto-la-poltica-de-privacidad-3"] {
 
-        width: var(--s3);
-        height: var(--s3);
+        width: var(--s2);
+        height: var(--s2);
         margin-right: var(--s);
         cursor: pointer;
       }
@@ -86,11 +81,12 @@
       label {
 
         margin: 0;
+        flex: 1;
       }
 
       .form-block__label {
 
-        margin: 0 0 var(--s) 0;
+        margin: 0 0 var(--s05);
         font-size: 0.9em;
 
         .is-required {
@@ -116,14 +112,30 @@
         padding: 0;
         margin-bottom: 0;
       }
+
+      &.is-type-hidden {
+
+        display: none;
+      }
     }
 
     .form-block__message-container {
 
+      &.is-type-success,
+      &.is-type-error {
+
+        font-weight: 900;
+        text-align: center;
+      }
+
       &.is-type-success {
 
         color: var(--verde-roi);
-        font-weight: 900;
+      }
+
+      &.is-type-error {
+
+        color: var(--naranja-intenso);
       }
     }
   }

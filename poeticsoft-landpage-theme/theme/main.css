@@ -39,6 +39,8 @@
   --blanco: var(--wp--preset--color--ave-blanco);
   --verde-roi: var(--wp--preset--color--ave-verde-roi);
   --azul-credibilidad: var(--wp--preset--color--ave-azul-credibilidad);
+  --blanco01: color-mix(in srgb, var(--blanco) 10%, transparent);
+  --blanco02: color-mix(in srgb, var(--blanco) 20%, transparent);
 }
 
 /**************************************
@@ -298,13 +300,13 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container .wp-block-nav
 
 @keyframes dynamicZoom {
   0% {
-    transform: scale(1) rotateZ(0);
+    transform: scale(1);
   }
   50% {
-    transform: scale(1.4) rotateZ(10deg);
+    transform: scale(1.4);
   }
   100% {
-    transform: scale(1) rotateZ(0);
+    transform: scale(1);
   }
 }
 .wp-block-cover.ps-visual.ps-dynamiczoom .wp-block-cover__image-background {
@@ -339,23 +341,21 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container .wp-block-nav
   display: none;
 }
 .wp-block-group.form.auditoria form .wp-block-form-block-input {
-  margin-top: var(--s2);
   margin-bottom: 0 !important;
-}
-.wp-block-group.form.auditoria form .wp-block-form-block-input label {
-  display: none;
 }
 .wp-block-group.form .wp-block-form-block-form {
   margin-bottom: var(--s3);
 }
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input {
   padding: var(--s);
-  margin-bottom: var(--s);
+  margin-bottom: 0;
   margin-left: calc(var(--s) * -1);
   margin-right: calc(var(--s) * -1);
 }
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input.is-type-checkbox {
   margin-bottom: 0;
+  display: flex;
+  align-items: center;
 }
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input.form-error {
   border: dotted 1px var(--naranja-intenso);
@@ -366,21 +366,21 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container .wp-block-nav
   margin-block-end: 0;
 }
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input.wp-block-button input {
-  margin-left: 0;
-  margin-right: 0;
   width: fit-content;
 }
-.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .form-block__source[id=id-he-ledo-y-acepto-la-poltica-de-privacidad-2] {
-  width: var(--s3);
-  height: var(--s3);
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .form-block__source[id=id-he-ledo-y-acepto-la-poltica-de-privacidad-2],
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .form-block__source[id=id-he-ledo-y-acepto-la-poltica-de-privacidad-3] {
+  width: var(--s2);
+  height: var(--s2);
   margin-right: var(--s);
   cursor: pointer;
 }
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input label {
   margin: 0;
+  flex: 1;
 }
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .form-block__label {
-  margin: 0 0 var(--s) 0;
+  margin: 0 0 var(--s05);
   font-size: 0.9em;
 }
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .form-block__label .is-required {
@@ -400,9 +400,18 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container .wp-block-nav
   padding: 0;
   margin-bottom: 0;
 }
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input.is-type-hidden {
+  display: none;
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__message-container.is-type-success, .wp-block-group.form .wp-block-form-block-form .form-block__message-container.is-type-error {
+  font-weight: 900;
+  text-align: center;
+}
 .wp-block-group.form .wp-block-form-block-form .form-block__message-container.is-type-success {
   color: var(--verde-roi);
-  font-weight: 900;
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__message-container.is-type-error {
+  color: var(--naranja-intenso);
 }
 
 .ui-dialog.privacy {
@@ -445,6 +454,35 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container .wp-block-nav
 }
 .ui-dialog.privacy .ui-dialog-content .entry-content.wp-block-post-content h3 {
   font-size: 1.2em;
+}
+
+.bg-geom {
+  border: solid var(--blanco01);
+  border-width: 1px 0;
+}
+.bg-geom:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(/wp-content/themes/poeticsoft-landpage-theme/assets/images/fondo-geometria-dinamica.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  mix-blend-mode: difference;
+  opacity: 0.1;
+  z-index: 0;
+}
+.bg-geom > * {
+  position: relative;
+  z-index: 1;
+}
+
+figure.is-style-default.radius {
+  border-radius: var(--s2);
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=main.css.map*/

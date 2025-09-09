@@ -6,7 +6,8 @@
     "admindev": "webpack --env=admin-dev",
     "adminprod": "webpack --env=admin-prod",    
     "themedev": "webpack --env=theme-dev",
-    "themeprod": "webpack --env=theme-prod"
+    "themeprod": "webpack --env=theme-prod",
+    "mailmessagedev": "webpack --env=mailmessage-dev"
   },
   "dependencies": {
     "@babel/core": "^7.18.10",

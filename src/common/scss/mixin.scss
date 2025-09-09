@@ -25,10 +25,10 @@
   text-overflow: ellipsis;
 }
 
-@mixin bgimage($img: "") {
+@mixin bgimage($img: "", $size: contain) {
 
   background-image: url($img);
-  background-size: contain;
+  background-size: $size;
   background-position: center;
   background-repeat: no-repeat;
 }

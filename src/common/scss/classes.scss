@@ -1,0 +1,30 @@
+@use '~common/scss/mixin' as *;
+
+.bg-geom {
+
+  border: solid var(--blanco01);
+  border-width: 1px 0;
+
+  &:before {
+
+    content: "";
+    @include absolutebox();
+    @include bgimage("~assets/images/fondo-geometria-dinamica.svg", cover);
+    mix-blend-mode: difference;
+    opacity: 0.1;
+    z-index: 0;
+
+  }
+
+  > * {
+
+    position: relative;
+    z-index: 1;
+  }
+}
+
+figure.is-style-default.radius {
+
+  border-radius: var(--s2);
+  overflow: hidden;
+}

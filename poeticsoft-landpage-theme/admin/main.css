@@ -31,6 +31,8 @@
   --blanco: var(--wp--preset--color--ave-blanco);
   --verde-roi: var(--wp--preset--color--ave-verde-roi);
   --azul-credibilidad: var(--wp--preset--color--ave-azul-credibilidad);
+  --blanco01: color-mix(in srgb, var(--blanco) 10%, transparent);
+  --blanco02: color-mix(in srgb, var(--blanco) 20%, transparent);
 }
 
 /**************************************
@@ -38,7 +40,7 @@
 ***************************************
 */
 strong {
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .components-text-control__input,
@@ -70,6 +72,35 @@ input[type=email].form-block__source {
 .wp-block-button__link.wp-element-button:visited {
   background-color: var(--blanco);
   color: var(--naranja);
+}
+
+.bg-geom {
+  border: solid var(--blanco01);
+  border-width: 1px 0;
+}
+.bg-geom:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(/wp-content/themes/poeticsoft-landpage-theme/assets/images/fondo-geometria-dinamica.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  mix-blend-mode: difference;
+  opacity: 0.1;
+  z-index: 0;
+}
+.bg-geom > * {
+  position: relative;
+  z-index: 1;
+}
+
+figure.is-style-default.radius {
+  border-radius: var(--s2);
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=main.css.map*/

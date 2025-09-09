@@ -29,6 +29,11 @@ add_filter(
       return 'Hemos recibido tu solicitud, muchas gracias por tu interés.';
     }
 
+    if ( $text === 'There was a problem with your request. Please try again.' ) {
+      
+      return 'Ha habido algún problema con el envío, Inténtalo de nuevo, por favor.';
+    }
+
     return $translated_text;
 
   }, 

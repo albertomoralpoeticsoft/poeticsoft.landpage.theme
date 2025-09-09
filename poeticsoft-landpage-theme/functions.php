@@ -12,3 +12,4 @@ function theme_log($display) {
 }
 
 require_once(dirname(__FILE__) . '/setup/main.php');
+require_once(dirname(__FILE__) . '/api/main.php');
