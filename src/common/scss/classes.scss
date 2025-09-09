@@ -2,7 +2,8 @@
 
 .bg-geom {
 
-  border: solid var(--blanco01);
+  border-style: solid;
+  border-color: var(--blanco01);
   border-width: 1px 0;
 
   &:before {
@@ -11,15 +12,20 @@
     @include absolutebox();
     @include bgimage("~assets/images/fondo-geometria-dinamica.svg", cover);
     mix-blend-mode: difference;
-    opacity: 0.1;
-    z-index: 0;
+    opacity: 0.15;
+    z-index: 1 !important;
 
   }
 
   > * {
 
     position: relative;
-    z-index: 1;
+    z-index: 2;
+
+    &.wp-block-cover__background {
+
+      z-index: 0 !important;
+    }
   }
 }
 

@@ -39,8 +39,7 @@
   --blanco: var(--wp--preset--color--ave-blanco);
   --verde-roi: var(--wp--preset--color--ave-verde-roi);
   --azul-credibilidad: var(--wp--preset--color--ave-azul-credibilidad);
-  --blanco01: color-mix(in srgb, var(--blanco) 10%, transparent);
-  --blanco02: color-mix(in srgb, var(--blanco) 20%, transparent);
+  --blanco01: color-mix(in srgb, var(--blanco) 15%, transparent);
 }
 
 /**************************************
@@ -98,6 +97,7 @@ body {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background-color: var(--negro);
 }
 
 #APP,
@@ -294,7 +294,6 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container .wp-block-nav
   transition-timing-function: ease-in-out;
 }
 .ps-visual.ps-fade.ps-in-viewport {
-  transition-delay: 0.5s;
   opacity: 1;
 }
 
@@ -329,7 +328,6 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container .wp-block-nav
   text-align: right;
   color: rgba(255, 255, 255, 0.5333333333);
   font-size: 0.8em;
-  margin-bottom: var(--s2);
 }
 .wp-block-group.form .form-block__required-notice .is-required {
   position: absolute;
@@ -343,19 +341,35 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container .wp-block-nav
 .wp-block-group.form.auditoria form .wp-block-form-block-input {
   margin-bottom: 0 !important;
 }
-.wp-block-group.form .wp-block-form-block-form {
-  margin-bottom: var(--s3);
-}
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input {
   padding: var(--s);
   margin-bottom: 0;
   margin-left: calc(var(--s) * -1);
   margin-right: calc(var(--s) * -1);
 }
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input label {
+  margin: 0;
+  flex: 1;
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .form-block__label {
+  margin: 0 0 var(--s05);
+  font-size: 0.9em;
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .form-block__label .is-required {
+  position: absolute;
+  display: inline-block;
+  color: #ff0000;
+  font-size: 1.8em;
+  line-height: 1;
+}
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input.is-type-checkbox {
   margin-bottom: 0;
   display: flex;
   align-items: center;
+}
+.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input.is-type-checkbox .form-block__label {
+  margin: 0 0 0;
+  font-size: 0.9em;
 }
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input.form-error {
   border: dotted 1px var(--naranja-intenso);
@@ -374,21 +388,6 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container .wp-block-nav
   height: var(--s2);
   margin-right: var(--s);
   cursor: pointer;
-}
-.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input label {
-  margin: 0;
-  flex: 1;
-}
-.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .form-block__label {
-  margin: 0 0 var(--s05);
-  font-size: 0.9em;
-}
-.wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .form-block__label .is-required {
-  position: absolute;
-  display: inline-block;
-  color: #ff0000;
-  font-size: 1.8em;
-  line-height: 1;
 }
 .wp-block-group.form .wp-block-form-block-form .form-block__element.wp-block-form-block-input .inline-error {
   margin-top: var(--s05);
@@ -457,7 +456,8 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container .wp-block-nav
 }
 
 .bg-geom {
-  border: solid var(--blanco01);
+  border-style: solid;
+  border-color: var(--blanco01);
   border-width: 1px 0;
 }
 .bg-geom:before {
@@ -472,12 +472,15 @@ nav.wp-block-navigation .wp-block-navigation__responsive-container .wp-block-nav
   background-position: center;
   background-repeat: no-repeat;
   mix-blend-mode: difference;
-  opacity: 0.1;
-  z-index: 0;
+  opacity: 0.15;
+  z-index: 1 !important;
 }
 .bg-geom > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+}
+.bg-geom > *.wp-block-cover__background {
+  z-index: 0 !important;
 }
 
 figure.is-style-default.radius {

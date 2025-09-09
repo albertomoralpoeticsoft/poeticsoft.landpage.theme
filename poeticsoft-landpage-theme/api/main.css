@@ -9,22 +9,34 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Montserrat", Arial, sans-serif;
-  background-color: #dddddd;
 }
 
 .message {
   width: 90%;
-  max-width: 280px;
-  margin: 36px auto;
-  border: solid 1px #000000;
-  padding: 24px;
-  background-color: #ffffff;
+  max-width: 320px;
+  margin: 44px auto;
   text-align: justify;
   font-size: 12px;
 }
 
 p {
   font-family: "Montserrat", Arial, sans-serif;
+  line-height: 1.4em;
+}
+p.has-text-align-center {
+  text-align: center;
+}
+p.has-small-font-size {
+  font-size: 10px;
+}
+
+a {
+  color: #FF6600;
+  text-decoration: none;
+}
+
+ul {
+  padding-inline-start: 16px;
 }
 
 figure {

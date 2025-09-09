@@ -63,6 +63,7 @@ add_filter(
       $allowed_blocks[] = 'core/table';
       $allowed_blocks[] = 'core/image';
       $allowed_blocks[] = 'core/separator';
+      $allowed_blocks[] = 'core/spacer';
       $allowed_blocks[] = 'core/shortcode';
       $allowed_blocks[] = 'core/buttons';
     }

@@ -7,7 +7,7 @@
     text-align: right;
     color: #ffffff88;
     font-size: 0.8em;
-    margin-bottom: var(--s2);
+    // margin-bottom: var(--s2);
 
     .is-required {
       
@@ -36,7 +36,7 @@
 
   .wp-block-form-block-form {
 
-    margin-bottom: var(--s3);
+    // margin-bottom: var(--s3);
     
     .form-block__element.wp-block-form-block-input  {
 
@@ -45,11 +45,38 @@
       margin-left: calc(var(--s) * -1);
       margin-right: calc(var(--s) * -1);
 
+      label {
+
+        margin: 0;
+        flex: 1;
+      }
+
+      .form-block__label {
+
+        margin: 0 0 var(--s05);
+        font-size: 0.9em;
+
+        .is-required {
+
+          position: absolute;
+          display: inline-block;
+          color: #ff0000;
+          font-size: 1.8em;
+          line-height: 1;
+        }
+      }
+
       &.is-type-checkbox {
 
         margin-bottom: 0;   
         display: flex;
         align-items: center;   
+
+        .form-block__label {
+
+          margin: 0 0 0;
+          font-size: 0.9em;
+        }
       }
 
       &.form-error {
@@ -76,27 +103,6 @@
         height: var(--s2);
         margin-right: var(--s);
         cursor: pointer;
-      }
-
-      label {
-
-        margin: 0;
-        flex: 1;
-      }
-
-      .form-block__label {
-
-        margin: 0 0 var(--s05);
-        font-size: 0.9em;
-
-        .is-required {
-
-          position: absolute;
-          display: inline-block;
-          color: #ff0000;
-          font-size: 1.8em;
-          line-height: 1;
-        }
       }
 
       .inline-error {

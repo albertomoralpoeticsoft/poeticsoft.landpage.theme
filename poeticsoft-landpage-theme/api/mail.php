@@ -17,6 +17,7 @@ function poeticsoft_landpage_mailmessage( WP_REST_Request $req ){
     $subject = $mailtemplate->post_title;
     $content = $mailtemplate->post_content;
     $csscontentfile = get_stylesheet_directory() . '/api/main.css';
+    $csscontentfileurl = get_stylesheet_directory_uri() . '/api/main.css';
     $csscontent = file_get_contents($csscontentfile);
     $message = str_replace('[Nombre]', $name, $content);
     $contenthtml = '<html>
@@ -24,16 +25,21 @@ function poeticsoft_landpage_mailmessage( WP_REST_Request $req ){
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" 
-          content="width=device-width, 
-                   user-scalable=no, 
-                   initial-scale=1, 
-                   maximum-scale=5"
-        >  
+              content="width=device-width, 
+                      user-scalable=no, 
+                      initial-scale=1, 
+                      maximum-scale=5"
+        > 
         <base href="' . site_url() . '">' .
-        '<style type="text/css">' .
-          $csscontent . 
-        '</style>
-      </head>
+          (
+            $test == 'si' ?
+            '<link rel="stylesheet" href="' . $csscontentfileurl . '?cache=' . strval(rand(1111, 9999)) . '" media="all" />'
+            :
+            '<style type="text/css">' .
+              $csscontent . 
+            '</style>'
+          ) .
+      '</head>
       <body>
         <div class="message">' 
           . $message . 
@@ -55,7 +61,7 @@ function poeticsoft_landpage_mailmessage( WP_REST_Request $req ){
 
     $result = $contentdom->saveHTML(); 
     
-    if($test) {   
+    if($test == "si") {   
 
       $writehtml = file_put_contents(
         dirname(__FILE__) . '/mail.html',
