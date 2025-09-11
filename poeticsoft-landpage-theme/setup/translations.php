@@ -34,6 +34,11 @@ add_filter(
       return 'Ha habido algún problema con el envío, Inténtalo de nuevo, por favor.';
     }
 
+    if ( $text === 'Loading …' ) {
+      
+      return 'Enviando...';
+    }
+
     return $translated_text;
 
   }, 
