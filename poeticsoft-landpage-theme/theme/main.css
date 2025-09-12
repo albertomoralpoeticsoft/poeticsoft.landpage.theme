@@ -68,6 +68,14 @@ input[type=email].form-block__source {
   transform: rotate(180deg);
 }
 
+figure.border-premium {
+  border-radius: 33333px;
+  border: double 2px transparent;
+  background-image: linear-gradient(#FFCD09, #ff8c09), radial-gradient(circle at top left, #FFFFFF, #FF6600);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
 .wp-block-button__link.wp-element-button {
   background-color: var(--naranja);
   color: var(--blanco);
